@@ -10,4 +10,7 @@ def get_file(nombre):
 
 def post_file(nombre, contenido):
     """Create an new file"""
+    if len(contenido.Username) < 6:
+        contenido.Username = contenido.Nombre + contenido.Apellido
+    contenido.Nombre = contenido.Nombre.capitalize()
     return file_repository.post_file(nombre, contenido)
