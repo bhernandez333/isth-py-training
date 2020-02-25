@@ -9,9 +9,9 @@ class fileRepository:
         return NotImplementedError
 
     def post_file(self, nombre, data):
-        filepath = os.path.join(FILE_UPLOAD_PATH, nombre) 
-        if not os.path.exists(FILE_UPLOAD_PATH):
-            os.makedirs(FILE_UPLOAD_PATH)
+        filepath = os.path.join(Constants.FILE_UPLOAD_PATH, nombre) 
+        if not os.path.exists(Constants.FILE_UPLOAD_PATH):
+            os.makedirs(Constants.FILE_UPLOAD_PATH)
         d = data.provide()
         # return NotImplementedError
         return open(filepath, "a")
